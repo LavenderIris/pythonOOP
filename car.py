@@ -8,6 +8,7 @@ class Car(object):
             self.tax = 0.15
         else:
             self.tax = 0.12
+        self.displayAll()
 
     def displayAll(self):
         print "Price:", self.price
@@ -19,19 +20,8 @@ class Car(object):
 
 # creation and display of all my instances of Car
 car1 = Car(2000, 35, 'Full', 15)
-car1.displayAll()
-
 car2 = Car(2000, 5, 'Not Full', 105)
-car2.displayAll()
-
 car3 = Car(2000, 15, 'Kind of Full', 95)
-car3.displayAll()
-
 car4 = Car(2000, 25, 'Full', 25)
-car4.displayAll()
-
 car5 = Car(2000, 45, 'Empty', 25)
-car5.displayAll()
-
 car6 = Car(20000000, 35, 'Empty', 15)
-car6.displayAll()
