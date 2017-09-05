@@ -5,9 +5,9 @@ class Car(object):
         self.fuel = fuel
         self.mileage = mileage
         if price>10000:
-            self.tax = 0.15
+            self._tax = 0.15
         else:
-            self.tax = 0.12
+            self._tax = 0.12
         self.displayAll()
 
     def displayAll(self):
@@ -15,7 +15,7 @@ class Car(object):
         print "Speed:", str(self.speed)+"mph"
         print "Fuel:", self.fuel
         print "Mileage:",str(self.mileage)+"mpg"
-        print "Tax:", self.tax
+        print "Tax:", self._tax
 
 
 # creation and display of all my instances of Car
