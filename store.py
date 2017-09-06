@@ -25,14 +25,16 @@ class Store(object):
     def inventory(self):
         print "INVENTORY"
         for item in self.products:
-            print "Name:", item["name"]
-            print "Type:", item["type"]
-            print "Price: $", item["price"]
+            print "Name:", item.name
+            print "Brand:", item.brand
+            print "Price: $", item.price
         return self
 
+"""
 products = [ {"name":"Leaf","type":"car","price":2000},{"name":"Accord","type":"bike","price":500} ]
 
 piercey = Store(products,"Sunnyvale, CA","Mr. T")
 piercey.inventory()
 piercey.add_product({"name":"Tesla","type":"Sedan","price":10000}).inventory()
 piercey.remove_product("Accord").inventory()
+"""
