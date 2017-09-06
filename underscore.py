@@ -9,9 +9,9 @@ class Underscore(object):
     def reduce(self,numlist, callback):
         # it takes a list of numbers and adds thru them one by one and returns overall total
         total=0
+        print numlist
         for num in numlist:
-            if callback(total, num):
-               total+=num
+            total = callback(total, num)
         return total 
     
     def find(self,numlist,callback):
