@@ -4,6 +4,9 @@ class Store(object):
         self.location = location
         self.owner=owner
 
+    def __repr__(self):
+        return "<User Products: {}, location: {}, owner: {}>".format(self.products,self.location, self.owner)
+
     # adds a product to our list of product objects
     def add_product(self,product):
         self.products.append(product)
@@ -25,16 +28,12 @@ class Store(object):
     def inventory(self):
         print "INVENTORY"
         for item in self.products:
-            print "Name:", item.name
-            print "Brand:", item.brand
-            print "Price: $", item.price
+            print item
         return self
 
-"""
-products = [ {"name":"Leaf","type":"car","price":2000},{"name":"Accord","type":"bike","price":500} ]
-
-piercey = Store(products,"Sunnyvale, CA","Mr. T")
-piercey.inventory()
-piercey.add_product({"name":"Tesla","type":"Sedan","price":10000}).inventory()
-piercey.remove_product("Accord").inventory()
-"""
+if __name__ == "__main__":
+    products = [ {"name":"Leaf","type":"car","price":2000},{"name":"Accord","type":"bike","price":500} ]
+    piercey = Store(products,"Sunnyvale, CA","Mr. T")
+    piercey.inventory()
+    piercey.add_product({"name":"Tesla","type":"Sedan","price":10000}).inventory()
+    piercey.remove_product("Accord").inventory()

@@ -8,6 +8,9 @@ class Patient(object):
     def setBedNumber(self, number):
         self._bednumber=number
     
+    def __repr__(self):
+        return '<User object id: {}, name: {}, allergies: {}, bednumber: {}'.format(self.id, self.name, self.allergies, self._bednumber)
+    
     def info(self):
     # prints out info about each patient
         print "ID:",self.id
@@ -26,6 +29,10 @@ class Hospital(object):
         self.capacity=capacity
         # private variable for setting up bed numbers
         self._available_beds=range(1, capacity+1)
+    
+    def __repr__(self):
+        return '<User object patients: {}, name: {}, capacity: {}, avail beds: {}'.format(self.patients, self.name, self.capacity, self._available_beds)
+    
 
     def admit(self, person):
         if len(self.patients)+1 > self.capacity :
@@ -64,20 +71,21 @@ class Hospital(object):
         return self
 
 
-patient1 = Patient(1, "Dinosaur Rex","peanuts")
-patient2 = Patient(12, "Cat Panic","dogs")
-patient3 = Patient(8, "Old MacDonalds","lucky charms")
+if __name__ == "__main__":
+    patient1 = Patient(1, "Dinosaur Rex","peanuts")
+    patient2 = Patient(12, "Cat Panic","dogs")
+    patient3 = Patient(8, "Old MacDonalds","lucky charms")
 
-hospital=Hospital("General", 10)
+    hospital=Hospital("General", 10)
 
-hospital.admit(patient1)
-hospital.admit(patient2)
-hospital.admit(patient3)
-hospital.info()
+    hospital.admit(patient1)
+    hospital.admit(patient2)
+    hospital.admit(patient3)
+    hospital.info()
 
-hospital.discharge("Dinosaur Rex")
+    hospital.discharge("Dinosaur Rex")
 
-hospital.info()
+    hospital.info()
 
 
 

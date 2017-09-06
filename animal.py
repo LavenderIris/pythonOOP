@@ -7,6 +7,9 @@ class Animal(object):
         self.name = name
         self.health = health
     
+    def __repr__(self):
+        return "<obj is Name: {} health {}".format(self.name, self.health)
+
     def walk(self):
         self.health-=1
         return self
@@ -33,6 +36,7 @@ class Dragon(Animal):
     def __init__(self,name):
         super(Dragon,self).__init__(name, 170)
     
+
     def fly(self):
         self.health-=10
         return self
@@ -41,17 +45,19 @@ class Dragon(Animal):
         super(Dragon,self).displayHealth()
         print "I am a Dragon"
 
-print "ZEBRA"
-animal=Animal("Zebra", 100)
-animal.displayHealth()
-animal.walk().walk().walk().run().run().displayHealth()        
 
-print "DOG"
-dog = Dog("Corgi")
-dog.displayHealth()
-dog.walk().walk().walk().run().run().pet().displayHealth()
+if __name__ == "__main__":
+    print "ZEBRA"
+    animal=Animal("Zebra", 100)
+    animal.displayHealth()
+    animal.walk().walk().walk().run().run().displayHealth()        
 
-print "DRAGON"
-dragon = Dragon("Eragon")
-dragon.displayHealth()
-dragon.fly().run().run().displayHealth()
+    print "DOG"
+    dog = Dog("Corgi")
+    dog.displayHealth()
+    dog.walk().walk().walk().run().run().pet().displayHealth()
+
+    print "DRAGON"
+    dragon = Dragon("Eragon")
+    dragon.displayHealth()
+    dragon.fly().run().run().displayHealth()

@@ -7,6 +7,9 @@ class Product(object):
         self.cost=cost
         self.status="for sale"
 
+    def __repr__(self):
+        return '<User object: {}, price: {}, weight: {}, brand: {} cost: {} status: {}'.format(self.name, self.price, self.weight, self.brand, self.cost, self.status)
+
     def sell(self):
         self.status="sold"
         return self
@@ -33,12 +36,13 @@ class Product(object):
         return self
         
 
-"""
-item1 = Product(10,"cat toy",5,"Fisher", 5)
-item1.displayInfo() 
-sale_price = item1.add_tax(0.2)
-print "the original price is: $",item1.price,"with sales tax, it's $",sale_price
+if __name__ == "__main__":
 
-item1.sell().displayInfo().return_item("like new").displayInfo()
-item1.sell().return_item("defective").displayInfo()
-"""
+    item1 = Product(10,"cat toy",5,"Fisher", 5)
+    item1.displayInfo() 
+    sale_price = item1.add_tax(0.2)
+    print "the original price is: $",item1.price,"with sales tax, it's $",sale_price
+
+    item1.sell().displayInfo().return_item("like new").displayInfo()
+    item1.sell().return_item("defective").displayInfo()
+

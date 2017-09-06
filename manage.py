@@ -12,10 +12,8 @@ if __name__ == "__main__":
     target = store.Store([item1, item2],"Mountain View", "Mr. T")
     target.inventory()
 
-    # adding a product here
-    item3 = product.Product(240000,"Car",2500,"Tesla", 100000)
-    target.add_product(item3)
-    target.inventory()
+  
 
+   # print target
     # exercise for tomorrow -- if we sell an item from the store, we should have the product "sold" and remove from the store's inventory
     
